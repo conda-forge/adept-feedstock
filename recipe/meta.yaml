@@ -1,7 +1,7 @@
 {% set name = "Adept" %}
-{% set version = "2.0.4" %}
+{% set version = "2.0.5" %}
 {% set build_number = "0" %}
-{% set sha256 = "5743b523c2cb7e9eaac602dc742c2d956ca437f9bb128bf574afffc2abf137fb" %}
+{% set sha256 = "6e5e4b29d3a983c97ae0d120c73bba2dded3cac4802e282b097c8bb2f52c43a3" %}
 
 package:
   name: {{ name|lower }}
@@ -11,10 +11,6 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://www.met.reading.ac.uk/clouds/adept/adept-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    # Old Clang doesn't have _mm_undefined_ps; use same workaround as for
-    # old gcc; https://github.com/rjhogan/Adept-2/issues/7
-    - _mm_undefined_ps.patch  # [osx]
 
 build:
   number: {{ build_number }}

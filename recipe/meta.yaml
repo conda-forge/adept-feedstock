@@ -1,6 +1,6 @@
 {% set name = "Adept" %}
 {% set version = "2.0.5" %}
-{% set build_number = "2" %}
+{% set build_number = "3" %}
 {% set sha256 = "6e5e4b29d3a983c97ae0d120c73bba2dded3cac4802e282b097c8bb2f52c43a3" %}
 
 package:

@@ -2,3 +2,5 @@
 make -j ${CPU_COUNT}
 make check
 make install
+cat /proc/cpuinfo
+uname -a

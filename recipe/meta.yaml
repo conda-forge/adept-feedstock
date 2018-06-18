@@ -18,11 +18,14 @@ build:
 
 requirements:
   build:
-    - toolchain
-    - gcc
-    - openblas 0.2.20
+    - {{ compiler('cxx') }}
+  host:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - openblas
   run:
-    - openblas 0.2.20
+    - openblas
 
 test:
   commands:

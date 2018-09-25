@@ -28,6 +28,8 @@ requirements:
 
 test:
   commands:
+    - ls -la $PREFIX/lib
+    - ls -la $PREFIX/include
     - test -L $PREFIX/lib/libadept$SHLIB_EXT
     - test -f $PREFIX/lib/libadept.so.0.0.0  # [linux]
     - test -f $PREFIX/lib/libadept.0.dylib   # [osx]

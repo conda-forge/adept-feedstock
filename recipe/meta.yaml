@@ -20,11 +20,13 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - libgfortran
+    - toolchain_fortran
   host:
     - openblas
+    - libgfortran
   run:
     - openblas
+    - libgfortran
 
 test:
   commands:

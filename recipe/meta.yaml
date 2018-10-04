@@ -18,20 +18,25 @@ build:
 
 requirements:
   build:
-    - toolchain
-    - gcc
-    - openblas 0.2.20
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
+  host:
+    - openblas
   run:
-    - openblas 0.2.20
+    - openblas
 
 test:
   commands:
+    - ls -la $PREFIX/lib
+    - ls -la $PREFIX/include
     - test -L $PREFIX/lib/libadept$SHLIB_EXT
     - test -f $PREFIX/lib/libadept.so.0.0.0  # [linux]
     - test -f $PREFIX/lib/libadept.0.dylib   # [osx]
     - test -f $PREFIX/lib/libadept.a
-    - test -f $PREFIX/lib/libadept.la
     - test -f $PREFIX/include/adept.h
+    - test -f $PREFIX/include/adept_arrays.h
+    - test -d $PREFIX/include/adept/
 
 about:
   home: http://www.met.reading.ac.uk/clouds/adept/

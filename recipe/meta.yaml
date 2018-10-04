@@ -20,7 +20,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - gfortran
+    - {{ compiler('fortran') }}
   host:
     - openblas
   run:

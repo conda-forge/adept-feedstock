@@ -23,8 +23,7 @@ requirements:
     - {{ compiler('fortran') }}
   host:
     - libblas
-    - libcblas
-  run:
+    - liblapack
 
 test:
   commands:

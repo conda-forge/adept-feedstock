@@ -1,6 +1,6 @@
 {% set name = "Adept" %}
 {% set version = "2.0.5" %}
-{% set build_number = 1003 %}
+{% set build_number = 1004 %}
 {% set sha256 = "6e5e4b29d3a983c97ae0d120c73bba2dded3cac4802e282b097c8bb2f52c43a3" %}
 
 package:
@@ -22,9 +22,8 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
   host:
-    - openblas
-  run:
-    - openblas
+    - libblas
+    - liblapack
 
 test:
   commands:

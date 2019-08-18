@@ -15,11 +15,15 @@ source:
 build:
   number: {{ build_number }}
   skip: True  # [not unix]
+  ignore_run_exports:
+    - libgfortran
+    - libgfortran-ng
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
   host:
     - libblas
     - liblapack

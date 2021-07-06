@@ -1,7 +1,7 @@
 {% set name = "Adept" %}
-{% set version = "2.0.5" %}
+{% set version = "2.1" %}
 {% set build_number = 1004 %}
-{% set sha256 = "6e5e4b29d3a983c97ae0d120c73bba2dded3cac4802e282b097c8bb2f52c43a3" %}
+{% set sha256 = "d3dd545d6a968acfd58f7f07f523fbb04b5ed7d1acd14b350e3ba34d14e3a1c2" %}
 
 package:
   name: {{ name|lower }}
@@ -35,6 +35,8 @@ test:
     - test -f $PREFIX/lib/libadept.a
     - test -f $PREFIX/include/adept.h
     - test -f $PREFIX/include/adept_arrays.h
+    - test -f $PREFIX/include/adept_optimize.h
+    - test -f $PREFIX/include/adept_source.h
     - test -d $PREFIX/include/adept/
 
 about:

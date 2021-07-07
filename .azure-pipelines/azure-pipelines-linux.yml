@@ -17,7 +17,6 @@ jobs:
       export CONFIG=linux64
       export IMAGE_NAME=quay.io/condaforge/linux-anvil-comp7
       export AZURE=True
-      .scripts/run_docker_build.sh
     displayName: Run docker build
     name: linux_64_build
   - publish: build_artifacts/linux-64/
@@ -52,7 +51,6 @@ jobs:
       fi
       export AZURE=True
       export CF_CUDA_VERSION="10.2"
-      .scripts/run_docker_build.sh
     displayName: Run docker build for CUDA 10.2
   - publish: build_artifacts/linux-64/
     artifact: conda_pkgs_linux_64_cuda102
@@ -76,7 +74,6 @@ jobs:
       export CONFIG=linux64
       export IMAGE_NAME=quay.io/condaforge/linux-anvil-cos7-x86_64
       export AZURE=True
-      .scripts/run_docker_build.sh
     displayName: Run docker build for centos 7
   - publish: build_artifacts/linux-64/
     artifact: conda_pkgs_linux_64_centos7

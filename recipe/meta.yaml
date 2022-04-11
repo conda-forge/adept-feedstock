@@ -1,7 +1,7 @@
 {% set name = "Adept" %}
-{% set version = "2.0.5" %}
-{% set build_number = 1004 %}
-{% set sha256 = "6e5e4b29d3a983c97ae0d120c73bba2dded3cac4802e282b097c8bb2f52c43a3" %}
+{% set version = "2.1.1" %}
+{% set build_number = 0 %}
+{% set sha256 = "d0f0d3c8d85fdce01668410c8bddf2d992710baf9188683ec11f13ca20a61552" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 
 build:
   number: {{ build_number }}
-  skip: True  # [not unix]
+  skip: true  # [not unix]
 
 requirements:
   build:
@@ -42,7 +42,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: COPYING
-  summary: 'Fast automatic differentiation library in C++'
+  summary: Fast automatic differentiation library in C++
   description: |
     Adept (Automatic Differentiation using Expression Templates) is a free C++
     software library that enables algorithms to be automatically differentiated,

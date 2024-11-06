@@ -1,6 +1,6 @@
 {% set name = "Adept" %}
 {% set version = "2.0.5" %}
-{% set build_number = 1004 %}
+{% set build_number = 1005 %}
 {% set sha256 = "6e5e4b29d3a983c97ae0d120c73bba2dded3cac4802e282b097c8bb2f52c43a3" %}
 
 package:
@@ -15,11 +15,16 @@ source:
 build:
   number: {{ build_number }}
   skip: True  # [not unix]
+  ignore_run_exports:
+    - libgfortran
+    - libgfortran-ng
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}        # [not osx]
+    - {{ compiler('cxx') }}      # [not osx]
+    - clang_osx-64    8.0.1      # [osx]
+    - clangxx_osx-64  8.0.1      # [osx]
     - {{ compiler('fortran') }}
   host:
     - libblas
